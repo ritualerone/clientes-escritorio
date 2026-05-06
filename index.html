@@ -31,7 +31,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .ni.active{background:var(--bg);color:var(--text);font-weight:500}
 .ni-left{display:flex;align-items:center;gap:7px}
 .ni-left svg{opacity:.7;flex-shrink:0}
-.ni.active .ni-left svg,.ni:hover .ni-left svg{opacity:1}
+.ni.active .ni-left svg{opacity:1}
 .bdg{font-size:10px;background:var(--bg);border:0.5px solid var(--border);border-radius:999px;padding:1px 7px;color:var(--text3)}
 .bdg.nf{background:var(--amber-bg);border-color:#EF9F27;color:var(--amber-txt)}
 .bdg.baixado{background:var(--red-bg);border-color:#E24B4A;color:var(--red-txt)}
@@ -39,10 +39,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .sb-bottom{margin-top:auto;padding:12px 14px;border-top:0.5px solid var(--border);display:flex;align-items:center;justify-content:space-between}
 
 /* MAIN */
-.main{flex:1;overflow-y:auto;display:flex;flex-direction:column;min-height:0}
+.main{flex:1;overflow-y:auto;display:flex;flex-direction:column}
 .topbar{padding:16px 22px 0;display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-shrink:0}
 .page-title{font-size:16px;font-weight:500}
-.page-content{padding:0 22px 22px;flex:1}
+.page-content{padding:0 22px 22px}
 .page{display:none}.page.active{display:block}
 
 /* KPI */
@@ -66,19 +66,18 @@ tr:last-child td{border-bottom:none}
 tr:hover td{background:#fafaf8}
 
 /* PILLS */
-.pill{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:600;padding:2px 7px;border-radius:999px;white-space:nowrap}
+.pill{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
 .pill.mensalista{background:var(--blue-bg);color:var(--blue-txt)}
 .pill.avulso{background:var(--amber-bg);color:var(--amber-txt)}
-.pill.temporário{background:var(--purple-bg);color:var(--purple-txt)}
+.pill.temporário,.pill.temporario{background:var(--purple-bg);color:var(--purple-txt)}
 .pill.parceiro{background:var(--green-bg);color:var(--green-txt)}
 .pill.ativo{background:var(--green-bg);color:var(--green-txt)}
 .pill.baixado{background:var(--red-bg);color:var(--red-txt)}
 .pill.pendente{background:var(--amber-bg);color:var(--amber-txt)}
-.tag-nf{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:600;padding:2px 7px;border-radius:999px;background:var(--amber-bg);color:var(--amber-txt);border:0.5px solid #EF9F27}
-.tags-cell{display:flex;flex-wrap:wrap;gap:3px;overflow:visible;white-space:normal}
+.tag-nf{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--amber-bg);color:var(--amber-txt);border:0.5px solid #EF9F27}
 
 /* SEARCH */
-.search-row{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;align-items:center}
+.search-row{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
 .search-row input,.search-row select{font-size:13px;padding:6px 10px;border:0.5px solid var(--border2);border-radius:var(--radius);background:var(--surface);color:var(--text);outline:none}
 .search-row input{flex:1;min-width:160px}
 .search-row input:focus,.search-row select:focus{border-color:var(--blue)}
@@ -91,11 +90,12 @@ tr:hover td{background:#fafaf8}
 .btn.danger{color:var(--red);border-color:var(--red)}
 .btn.success{color:var(--green);border-color:var(--green)}
 .btn.sm{font-size:11px;padding:4px 8px}
+.btn.xs{font-size:10px;padding:3px 7px}
 
 /* MODAL */
 .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:100;align-items:center;justify-content:center}
 .modal-bg.open{display:flex}
-.modal{background:var(--surface);border-radius:var(--radius-lg);padding:20px;width:420px;max-height:92vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,.14)}
+.modal{background:var(--surface);border-radius:var(--radius-lg);padding:20px;width:400px;max-height:92vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,.14)}
 .modal h3{font-size:14px;font-weight:500;margin-bottom:14px}
 .form-row{margin-bottom:10px}
 .form-row label{font-size:11px;color:var(--text2);display:block;margin-bottom:3px;font-weight:500}
@@ -103,76 +103,76 @@ tr:hover td{background:#fafaf8}
 .form-row input:focus,.form-row select:focus,.form-row textarea:focus{border-color:var(--blue)}
 .form-2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .form-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-.nf-toggle{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--bg);border-radius:var(--radius);cursor:pointer;border:0.5px solid var(--border)}
+.nf-toggle{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--bg);border-radius:var(--radius);cursor:pointer;border:0.5px solid var(--border);margin-bottom:10px}
 .nf-toggle input[type=checkbox]{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
 .modal-actions{display:flex;gap:7px;margin-top:14px;justify-content:flex-end}
 
-/* CONTRATOS dentro do modal cliente */
-.contratos-bloco{margin-top:14px;border-top:0.5px solid var(--border);padding-top:14px}
-.contrato-card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius);padding:10px 12px;margin-bottom:8px;position:relative}
-.contrato-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
-.contrato-card-title{font-size:12px;font-weight:600;color:var(--text2)}
-.btn-remove-cont{background:none;border:none;cursor:pointer;color:var(--text3);font-size:14px;padding:0;line-height:1}
-.btn-remove-cont:hover{color:var(--red)}
-.add-cont-btn{display:flex;align-items:center;gap:5px;font-size:12px;padding:6px 10px;border:0.5px dashed var(--border2);border-radius:var(--radius);background:none;cursor:pointer;color:var(--text3);width:100%;justify-content:center;margin-top:4px}
-.add-cont-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-bg)}
-
-/* FICHA CLIENTE */
-.ficha-header{display:flex;align-items:flex-start;gap:14px;background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:16px;margin-bottom:14px}
-.avatar{width:44px;height:44px;border-radius:50%;background:var(--blue-bg);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:var(--blue-txt);flex-shrink:0}
-.ficha-info{flex:1;min-width:0}
-.ficha-nome{font-size:16px;font-weight:500;margin-bottom:4px}
-.ficha-meta{font-size:12px;color:var(--text2);display:flex;gap:12px;flex-wrap:wrap}
-.tabs{display:flex;gap:0;border-bottom:0.5px solid var(--border);margin-bottom:16px}
-.tab{font-size:13px;padding:8px 16px;cursor:pointer;color:var(--text2);border-bottom:2px solid transparent;margin-bottom:-0.5px;white-space:nowrap}
-.tab:hover{color:var(--text)}
-.tab.active{color:var(--blue);border-bottom-color:var(--blue);font-weight:500}
-.tab-pane{display:none}.tab-pane.active{display:block}
-.back-btn{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text2);cursor:pointer;margin-bottom:12px;background:none;border:none;padding:0}
+/* FICHA */
+.back-btn{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--text2);cursor:pointer;background:none;border:none;padding:0;margin-bottom:14px}
 .back-btn:hover{color:var(--text)}
+.ficha-card{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:16px;margin-bottom:14px}
+.ficha-top{display:flex;align-items:flex-start;gap:12px;margin-bottom:0}
+.avatar{width:42px;height:42px;border-radius:50%;background:var(--blue-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--blue-txt);flex-shrink:0}
+.ficha-nome{font-size:16px;font-weight:500}
+.ficha-sub{font-size:12px;color:var(--text2);margin-top:3px;display:flex;gap:12px;flex-wrap:wrap}
 
-/* CONTRATO FICHA */
-.cont-ficha{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:10px}
-.cont-ficha-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.cont-ficha-title{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500}
-.cont-detail-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
-.cont-detail-item label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--text3);display:block;margin-bottom:3px}
-.cont-detail-item span{font-size:13px;color:var(--text)}
+/* SEÇÕES DENTRO DA FICHA */
+.secao{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:14px;margin-bottom:12px}
+.secao-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.secao-title{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--text)}
+.secao-title svg{opacity:.6}
+.secao-vazia{font-size:12px;color:var(--text3);padding:4px 0}
+
+/* CONTRATO ÚNICO (mensalista, temporário, parceiro) */
+.cont-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px}
+.cont-field label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--text3);display:block;margin-bottom:3px}
+.cont-field span{font-size:13px;color:var(--text)}
+.cont-obs{font-size:12px;color:var(--text2);font-style:italic;padding:8px 10px;background:var(--bg);border-radius:var(--radius);margin-top:8px}
+
+/* AVULSOS (lista) */
+.avulso-item{border:0.5px solid var(--border);border-radius:var(--radius);padding:10px 12px;margin-bottom:8px;background:var(--bg)}
+.avulso-item:last-child{margin-bottom:0}
+.avulso-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.avulso-desc{font-size:13px;font-weight:500}
+.avulso-meta{display:flex;gap:10px;font-size:12px;color:var(--text2)}
+
+/* EDIT INLINE */
+.edit-form{background:var(--bg);border:0.5px solid var(--border2);border-radius:var(--radius);padding:12px;margin-top:10px}
+.edit-form-title{font-size:11px;font-weight:600;color:var(--text2);margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em}
 
 /* DOCUMENTOS */
-.doc-drop{border:2px dashed var(--border2);border-radius:var(--radius);padding:20px;text-align:center;cursor:pointer;transition:border-color .2s;margin-bottom:12px}
+.doc-drop{border:2px dashed var(--border2);border-radius:var(--radius);padding:18px;text-align:center;cursor:pointer;transition:border-color .15s;margin-bottom:10px}
 .doc-drop:hover,.doc-drop.over{border-color:var(--blue);background:var(--blue-bg)}
 .doc-drop p{font-size:13px;color:var(--text2);margin-top:4px}
 .doc-drop small{font-size:11px;color:var(--text3)}
-.doc-card{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius);margin-bottom:8px}
-.doc-icon{width:34px;height:34px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
-.doc-icon.pdf{background:var(--red-bg)}.doc-icon.img{background:var(--green-bg)}.doc-icon.doc{background:var(--blue-bg)}.doc-icon.other{background:var(--bg)}
+.doc-item{display:flex;align-items:center;gap:10px;padding:9px 12px;background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius);margin-bottom:7px}
+.doc-icon{width:32px;height:32px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.doc-icon.pdf{background:var(--red-bg)}.doc-icon.img{background:var(--green-bg)}.doc-icon.doc{background:var(--blue-bg)}.doc-icon.other{background:var(--surface)}
 .doc-info{flex:1;min-width:0}
-.doc-name{font-size:13px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.doc-meta{font-size:11px;color:var(--text3);margin-top:2px}
+.doc-name{font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.doc-meta{font-size:11px;color:var(--text3);margin-top:1px}
 .doc-actions{display:flex;gap:4px;flex-shrink:0}
 .file-input{display:none}
-.upload-progress{background:var(--bg);border-radius:var(--radius);padding:10px 12px;margin-bottom:8px;font-size:12px;color:var(--text2)}
-.progress-bar{height:4px;background:var(--border);border-radius:2px;margin-top:6px;overflow:hidden}
+.upload-progress{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius);padding:9px 12px;margin-bottom:7px;font-size:12px;color:var(--text2)}
+.progress-bar{height:3px;background:var(--border);border-radius:2px;margin-top:5px;overflow:hidden}
 .progress-fill{height:100%;background:var(--blue);border-radius:2px;transition:width .3s}
 
 /* MISC */
-.empty{font-size:12px;color:var(--text3);padding:8px 0}
+.empty{font-size:12px;color:var(--text3);padding:6px 0}
 .pag-row{display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:0.5px solid var(--border);font-size:12px}
 .pag-row:last-child{border-bottom:none}
-.actions-col{display:flex;gap:4px}
+.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:9px}
+.bar-label{font-size:12px;color:var(--text2);min-width:90px}
+.bar-track{flex:1;height:5px;background:var(--bg);border-radius:3px;overflow:hidden}
+.bar-fill{height:100%;border-radius:3px;transition:width .4s}
+.bar-count{font-size:12px;color:var(--text2);min-width:18px;text-align:right}
 .conn-status{font-size:11px;padding:2px 8px;border-radius:999px}
 .conn-status.ok{background:var(--green-bg);color:var(--green-txt)}
 .conn-status.err{background:var(--red-bg);color:var(--red-txt)}
 .conn-status.loading{background:var(--bg);color:var(--text3)}
 .toast{position:fixed;bottom:20px;right:20px;background:var(--text);color:var(--surface);padding:10px 16px;border-radius:var(--radius);font-size:13px;z-index:200;opacity:0;transition:opacity .2s;pointer-events:none}
 .toast.show{opacity:1}
-.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:9px}
-.bar-label{font-size:12px;color:var(--text2);min-width:90px}
-.bar-track{flex:1;height:5px;background:var(--bg);border-radius:3px;overflow:hidden}
-.bar-fill{height:100%;border-radius:3px;transition:width .4s}
-.bar-count{font-size:12px;color:var(--text2);min-width:18px;text-align:right}
-.section-title{font-size:12px;font-weight:600;color:var(--text2);margin:16px 0 8px;display:flex;align-items:center;justify-content:space-between}
+.tags-wrap{display:flex;flex-wrap:wrap;gap:3px}
 </style>
 </head>
 <body>
@@ -182,10 +182,7 @@ tr:hover td{background:#fafaf8}
 <div class="sidebar">
   <div class="sb-logo">
     <div class="logo-box">🏢</div>
-    <div>
-      <div style="font-size:13px;font-weight:500">Clientes</div>
-      <div style="font-size:11px;color:var(--text3)">Escritório</div>
-    </div>
+    <div><div style="font-size:13px;font-weight:500">Clientes</div><div style="font-size:11px;color:var(--text3)">Escritório</div></div>
   </div>
 
   <div class="sb-sec">Módulos</div>
@@ -196,12 +193,8 @@ tr:hover td{background:#fafaf8}
     <div class="ni-left"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Clientes</div>
     <span class="bdg" id="bdg-total">0</span>
   </div>
-  <div class="ni" onclick="goPage('documentos')">
-    <div class="ni-left"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Documentos</div>
-    <span class="bdg" id="bdg-docs">0</span>
-  </div>
 
-  <div class="sb-sec">Filtrar por tipo</div>
+  <div class="sb-sec">Filtrar</div>
   <div class="ni" onclick="filtrarTipo('Mensalista')">
     <div class="ni-left"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>Mensalistas</div>
     <span class="bdg" id="bdg-mensal">0</span>
@@ -219,15 +212,7 @@ tr:hover td{background:#fafaf8}
     <span class="bdg" id="bdg-parc">0</span>
   </div>
 
-  <div class="sb-sec">Financeiro / Status</div>
-  <div class="ni" onclick="filtrarStatus('Ativo')">
-    <div class="ni-left"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Ativos</div>
-    <span class="bdg" id="bdg-ativo">0</span>
-  </div>
-  <div class="ni" onclick="filtrarStatus('Pendente')">
-    <div class="ni-left"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Pendentes</div>
-    <span class="bdg" id="bdg-pend">0</span>
-  </div>
+  <div class="sb-sec">Status / Financeiro</div>
   <div class="ni" onclick="filtrarStatus('Baixado')">
     <div class="ni-left"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>Baixados</div>
     <span class="bdg baixado" id="bdg-baixado">0</span>
@@ -236,7 +221,7 @@ tr:hover td{background:#fafaf8}
     <div class="ni-left nf-nav"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Emite NF mensal</div>
     <span class="bdg nf" id="bdg-nf">0</span>
   </div>
-  <div class="ni" onclick="goPage('contratos-venc')">
+  <div class="ni" onclick="goPage('vencendo')">
     <div class="ni-left"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Contratos vencendo</div>
   </div>
 
@@ -261,26 +246,17 @@ tr:hover td{background:#fafaf8}
         <div class="kpi"><div class="kpi-label">Emitem NF</div><div class="kpi-val amber" id="k-nf">—</div></div>
       </div>
       <div class="two-col">
-        <div class="panel">
-          <div class="panel-title">Contratos por tipo</div>
-          <div id="dist-tipo"><div class="empty">Nenhum contrato cadastrado</div></div>
-        </div>
+        <div class="panel"><div class="panel-title">Contratos por tipo</div><div id="dist-tipo"><div class="empty">—</div></div></div>
         <div class="panel">
           <div class="panel-title">Status dos contratos</div>
           <div class="bar-row"><span class="bar-label">Ativos</span><div class="bar-track"><div class="bar-fill" id="bar-ativ" style="background:var(--green);width:0%"></div></div><span class="bar-count" id="cnt-ativ">0</span></div>
-          <div class="bar-row"><span class="bar-label">Pendentes</span><div class="bar-track"><div class="bar-fill" id="bar-pend" style="background:#EF9F27;width:0%"></div></div><span class="bar-count" id="cnt-pend2">0</span></div>
+          <div class="bar-row"><span class="bar-label">Pendentes</span><div class="bar-track"><div class="bar-fill" id="bar-pend" style="background:#EF9F27;width:0%"></div></div><span class="bar-count" id="cnt-pend">0</span></div>
           <div class="bar-row"><span class="bar-label">Baixados</span><div class="bar-track"><div class="bar-fill" id="bar-baix" style="background:var(--red);width:0%"></div></div><span class="bar-count" id="cnt-baix">0</span></div>
         </div>
       </div>
       <div class="two-col">
-        <div class="panel">
-          <div class="panel-title">Contratos vencendo (60 dias)</div>
-          <div id="dash-cont"><div class="empty">Nenhum contrato vencendo</div></div>
-        </div>
-        <div class="panel">
-          <div class="panel-title">NF a emitir este mês</div>
-          <div id="dash-nf"><div class="empty">Nenhum cliente com NF</div></div>
-        </div>
+        <div class="panel"><div class="panel-title">Contratos vencendo (60 dias)</div><div id="dash-cont"><div class="empty">Nenhum</div></div></div>
+        <div class="panel"><div class="panel-title">NF a emitir este mês</div><div id="dash-nf"><div class="empty">Nenhum</div></div></div>
       </div>
     </div>
   </div>
@@ -312,12 +288,12 @@ tr:hover td{background:#fafaf8}
         <table>
           <thead>
             <tr>
-              <th style="width:24%">Nome</th>
-              <th style="width:28%">Contratos</th>
-              <th style="width:12%">Receita</th>
+              <th style="width:26%">Nome</th>
+              <th style="width:30%">Contratos ativos</th>
+              <th style="width:13%">Receita</th>
               <th style="width:10%">NF</th>
-              <th style="width:18%">Próx. vencimento</th>
-              <th style="width:8%"></th>
+              <th style="width:14%">Próx. venc.</th>
+              <th style="width:7%"></th>
             </tr>
           </thead>
           <tbody id="cl-tbody"></tbody>
@@ -333,48 +309,15 @@ tr:hover td{background:#fafaf8}
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
         Voltar para clientes
       </button>
-      <div style="display:flex;gap:8px">
-        <button class="btn" onclick="editarClienteAtual()">✏ Editar dados</button>
-        <button class="btn primary" onclick="abrirModalContrato()">+ Novo contrato</button>
-      </div>
+      <button class="btn" onclick="abrirModalCliente(fichaId)">✏ Editar dados</button>
     </div>
-    <div class="page-content">
-      <div class="ficha-header" id="ficha-header"></div>
-      <div class="tabs" id="ficha-tabs"></div>
-      <div id="ficha-tab-content"></div>
-    </div>
-  </div>
-
-  <!-- DOCUMENTOS (geral) -->
-  <div id="pg-documentos" class="page">
-    <div class="topbar">
-      <span class="page-title">Documentos</span>
-      <div style="display:flex;gap:8px;align-items:center">
-        <select id="doc-filter-cliente" onchange="renderDocs()" style="font-size:13px;padding:6px 10px;border:0.5px solid var(--border2);border-radius:var(--radius);background:var(--surface);outline:none">
-          <option value="">Todos os clientes</option>
-        </select>
-        <select id="doc-filter-tipo" onchange="renderDocs()" style="font-size:13px;padding:6px 10px;border:0.5px solid var(--border2);border-radius:var(--radius);background:var(--surface);outline:none">
-          <option value="">Todos os tipos</option>
-          <option>Contrato</option><option>Procuração</option><option>RG/CPF</option><option>Comprovante</option><option>Outro</option>
-        </select>
-      </div>
-    </div>
-    <div class="page-content">
-      <div class="doc-drop" id="doc-drop-geral" onclick="document.getElementById('file-input-geral').click()" ondragover="dragOver(event,'geral')" ondragleave="dragLeave('geral')" ondrop="dropFile(event,'geral')">
-        <div style="font-size:26px">📎</div>
-        <p>Clique ou arraste arquivos aqui</p>
-        <small>PDF, Word, imagens — até 50MB</small>
-      </div>
-      <input type="file" id="file-input-geral" class="file-input" multiple onchange="uploadFiles(this.files,null)">
-      <div id="upload-progress-geral"></div>
-      <div id="docs-list-geral"></div>
-    </div>
+    <div class="page-content" id="ficha-content"></div>
   </div>
 
   <!-- CONTRATOS VENCENDO -->
-  <div id="pg-contratos-venc" class="page">
+  <div id="pg-vencendo" class="page">
     <div class="topbar"><span class="page-title">Contratos vencendo (60 dias)</span></div>
-    <div class="page-content"><div id="cont-venc-list"><div class="empty">Nenhum contrato vencendo</div></div></div>
+    <div class="page-content"><div id="venc-list"><div class="empty">Nenhum</div></div></div>
   </div>
 
 </div>
@@ -386,47 +329,52 @@ tr:hover td{background:#fafaf8}
     <h3 id="mc-title">Novo cliente</h3>
     <div class="form-row"><label>Nome *</label><input type="text" id="mc-nome" placeholder="Nome completo ou razão social"></div>
     <div class="form-2">
-      <div class="form-row"><label>E-mail</label><input type="email" id="mc-email" placeholder="email@exemplo.com"></div>
-      <div class="form-row"><label>Telefone</label><input type="text" id="mc-tel" placeholder="(00) 00000-0000"></div>
+      <div class="form-row"><label>E-mail</label><input type="email" id="mc-email"></div>
+      <div class="form-row"><label>Telefone</label><input type="text" id="mc-tel"></div>
     </div>
-    <div class="form-row"><label>Observação</label><textarea id="mc-obs" rows="2" placeholder="Notas internas..."></textarea></div>
-    <label class="nf-toggle">
-      <input type="checkbox" id="mc-nf">
-      <span>🧾 Emite nota fiscal todo mês</span>
-    </label>
-
-    <!-- Contratos inline -->
-    <div class="contratos-bloco">
-      <div style="font-size:12px;font-weight:600;color:var(--text2);margin-bottom:10px">Contratos</div>
-      <div id="mc-contratos-list"></div>
-      <button class="add-cont-btn" onclick="addContratoForm()">+ Adicionar contrato</button>
-    </div>
-
+    <div class="form-row"><label>Observação</label><textarea id="mc-obs" rows="2"></textarea></div>
+    <label class="nf-toggle"><input type="checkbox" id="mc-nf"><span>🧾 Emite nota fiscal todo mês</span></label>
     <div class="modal-actions">
-      <button class="btn" onclick="fecharModalCliente()">Cancelar</button>
+      <button class="btn" onclick="fecharModal('modal-cliente')">Cancelar</button>
       <button class="btn primary" onclick="salvarCliente()">Salvar</button>
     </div>
   </div>
 </div>
 
-<!-- MODAL CONTRATO (editar/adicionar em cliente existente) -->
-<div class="modal-bg" id="modal-contrato">
+<!-- MODAL CONTRATO FIXO (mensalista/temporário/parceiro) -->
+<div class="modal-bg" id="modal-cont-fixo">
   <div class="modal" style="width:360px">
-    <h3 id="mct-title">Novo contrato</h3>
-    <div class="form-row"><label>Tipo *</label>
-      <select id="mct-tipo"><option>Mensalista</option><option>Avulso</option><option>Temporário</option><option>Parceiro</option></select>
-    </div>
+    <h3 id="mcf-title">Contrato Mensalista</h3>
     <div class="form-2">
-      <div class="form-row"><label>Valor (R$)</label><input type="number" id="mct-valor" placeholder="0,00" min="0" step="0.01"></div>
+      <div class="form-row"><label>Valor (R$)</label><input type="number" id="mcf-valor" placeholder="0,00" min="0" step="0.01"></div>
       <div class="form-row"><label>Status</label>
-        <select id="mct-status"><option>Ativo</option><option>Pendente</option><option>Baixado</option></select>
+        <select id="mcf-status"><option>Ativo</option><option>Pendente</option><option>Baixado</option></select>
       </div>
     </div>
-    <div class="form-row"><label>Venc. contrato</label><input type="date" id="mct-venc"></div>
-    <div class="form-row"><label>Observação</label><textarea id="mct-obs" rows="2" placeholder="Detalhes do contrato..."></textarea></div>
+    <div class="form-row"><label>Venc. contrato</label><input type="date" id="mcf-venc"></div>
+    <div class="form-row"><label>Observação</label><textarea id="mcf-obs" rows="2" placeholder="Detalhes..."></textarea></div>
     <div class="modal-actions">
-      <button class="btn" onclick="fecharModalContrato()">Cancelar</button>
-      <button class="btn primary" onclick="salvarContrato()">Salvar</button>
+      <button class="btn" onclick="fecharModal('modal-cont-fixo')">Cancelar</button>
+      <button class="btn primary" onclick="salvarContFixo()">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL AVULSO -->
+<div class="modal-bg" id="modal-avulso">
+  <div class="modal" style="width:360px">
+    <h3 id="mav-title">Serviço avulso</h3>
+    <div class="form-row"><label>Descrição *</label><input type="text" id="mav-desc" placeholder="Ex: Consultoria tributária abril"></div>
+    <div class="form-2">
+      <div class="form-row"><label>Valor (R$)</label><input type="number" id="mav-valor" placeholder="0,00" min="0" step="0.01"></div>
+      <div class="form-row"><label>Status</label>
+        <select id="mav-status"><option>Ativo</option><option>Pendente</option><option>Baixado</option></select>
+      </div>
+    </div>
+    <div class="form-row"><label>Observação</label><textarea id="mav-obs" rows="2" placeholder="Detalhes..."></textarea></div>
+    <div class="modal-actions">
+      <button class="btn" onclick="fecharModal('modal-avulso')">Cancelar</button>
+      <button class="btn primary" onclick="salvarAvulso()">Salvar</button>
     </div>
   </div>
 </div>
@@ -435,10 +383,7 @@ tr:hover td{background:#fafaf8}
 <div class="modal-bg" id="modal-upload">
   <div class="modal" style="width:340px">
     <h3>Enviar documento</h3>
-    <div class="form-row"><label>Arquivo</label><div id="upload-filename" style="font-size:13px;color:var(--text2);padding:4px 0;font-weight:500"></div></div>
-    <div class="form-row"><label>Cliente *</label>
-      <select id="u-cliente"><option value="">Selecione o cliente...</option></select>
-    </div>
+    <div class="form-row"><label>Arquivo</label><div id="upload-filename" style="font-size:13px;font-weight:500;color:var(--text2);padding:3px 0"></div></div>
     <div class="form-row"><label>Tipo</label>
       <select id="u-tipo"><option>Contrato</option><option>Procuração</option><option>RG/CPF</option><option>Comprovante</option><option>Outro</option></select>
     </div>
@@ -458,489 +403,458 @@ const SUPABASE_KEY = 'sb_publishable_xpikZ2bpkP6vpnzerCDynA_3Tdq3ss5';
 const { createClient } = supabase;
 const db = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-let clientes = [], contratos = [], documentos = [];
-let editClienteId = null, editContratoId = null, fichaClienteId = null;
-let fichaActiveTab = 0;
-let pendingFiles = [], pendingFileIdx = 0, pendingUploadClienteId = null;
-let mcContratosForms = []; // contratos temporários no modal de novo cliente
+let clientes=[], contratos=[], documentos=[];
+let fichaId=null;
+let editClienteId=null, editContratoId=null, editAvulsoId=null;
+let contFixoTipo=null;
+let pendingFiles=[], pendingIdx=0;
 
 // ── BOOT ──────────────────────────────────────
-async function boot() {
+async function boot(){
   setConn('loading');
-  try {
-    const [r1, r2, r3] = await Promise.all([
+  try{
+    const [r1,r2,r3]=await Promise.all([
       db.from('clientes').select('*').order('nome'),
       db.from('contratos').select('*').order('created_at'),
-      db.from('documentos').select('*').order('created_at', {ascending:false})
+      db.from('documentos').select('*').order('created_at',{ascending:false})
     ]);
-    if (r1.error) throw r1.error;
-    if (r2.error) throw r2.error;
-    if (r3.error) throw r3.error;
-    clientes = r1.data; contratos = r2.data; documentos = r3.data;
+    if(r1.error)throw r1.error;
+    if(r2.error)throw r2.error;
+    if(r3.error)throw r3.error;
+    clientes=r1.data; contratos=r2.data; documentos=r3.data;
     setConn('ok');
-  } catch(e) {
-    setConn('err'); toast('Erro ao conectar: ' + e.message);
-    clientes = []; contratos = []; documentos = [];
-  }
+  }catch(e){setConn('err');toast('Erro: '+e.message);clientes=[];contratos=[];documentos=[];}
   renderAll();
 }
 
-function setConn(s) {
-  const el = document.getElementById('conn-status');
-  el.className = 'conn-status ' + s;
-  el.textContent = s === 'ok' ? 'online' : s === 'err' ? 'offline' : 'conectando';
+function setConn(s){
+  const el=document.getElementById('conn-status');
+  el.className='conn-status '+s;
+  el.textContent=s==='ok'?'online':s==='err'?'offline':'conectando';
 }
 
-// ── RENDER ALL ─────────────────────────────────
-function renderAll() {
-  updateDash(); renderTabela(); renderDocs(); renderContratosVenc(); updateBadges(); populateSelects();
-}
+function renderAll(){updateDash();renderTabela();if(fichaId)renderFicha();renderVencendo();updateBadges();}
 
-function updateBadges() {
-  const s = (id,v) => { const el=document.getElementById(id); if(el) el.textContent=v; };
-  const contAtivos  = contratos.filter(c=>c.status==='Ativo');
-  const tiposUnicos = (t) => {
-    const cids = [...new Set(contratos.filter(c=>c.tipo===t).map(c=>c.cliente_id))];
-    return cids.length;
-  };
-  s('bdg-total',  clientes.length);
-  s('bdg-mensal', tiposUnicos('Mensalista'));
-  s('bdg-avulso', tiposUnicos('Avulso'));
-  s('bdg-temp',   tiposUnicos('Temporário'));
-  s('bdg-parc',   tiposUnicos('Parceiro'));
-  s('bdg-ativo',  contratos.filter(c=>c.status==='Ativo').length);
-  s('bdg-pend',   contratos.filter(c=>c.status==='Pendente').length);
+// ── BADGES ────────────────────────────────────
+function updateBadges(){
+  const s=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v;};
+  const clienteComTipo=(t)=>[...new Set(contratos.filter(c=>c.tipo===t).map(c=>c.cliente_id))].length;
+  s('bdg-total',clientes.length);
+  s('bdg-mensal',clienteComTipo('Mensalista'));
+  s('bdg-avulso',clienteComTipo('Avulso'));
+  s('bdg-temp',clienteComTipo('Temporário'));
+  s('bdg-parc',clienteComTipo('Parceiro'));
   s('bdg-baixado',contratos.filter(c=>c.status==='Baixado').length);
-  s('bdg-nf',     clientes.filter(c=>c.emite_nf).length);
-  s('bdg-docs',   documentos.length);
+  s('bdg-nf',clientes.filter(c=>c.emite_nf).length);
 }
 
-function updateDash() {
-  const total   = clientes.length;
-  const ativos  = contratos.filter(c=>c.status==='Ativo').length;
-  const baixados= contratos.filter(c=>c.status==='Baixado').length;
-  const pend    = contratos.filter(c=>c.status==='Pendente').length;
-  const receita = contratos.filter(c=>c.status==='Ativo').reduce((s,c)=>s+(c.valor||0),0);
-  const nfCount = clientes.filter(c=>c.emite_nf).length;
-
-  const s = (id,v)=>{ const el=document.getElementById(id); if(el) el.textContent=v; };
-  s('k-total',total); s('k-ativos',ativos); s('k-baixados',baixados); s('k-receita',fmt(receita)); s('k-nf',nfCount);
-
-  const maxBar = Math.max(ativos,pend,baixados,1);
+// ── DASHBOARD ─────────────────────────────────
+function updateDash(){
+  const ativos=contratos.filter(c=>c.status==='Ativo').length;
+  const baixados=contratos.filter(c=>c.status==='Baixado').length;
+  const pend=contratos.filter(c=>c.status==='Pendente').length;
+  const receita=contratos.filter(c=>c.status==='Ativo'&&c.tipo!=='Avulso').reduce((s,c)=>s+(c.valor||0),0);
+  const s=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v;};
+  s('k-total',clientes.length);s('k-ativos',ativos);s('k-baixados',baixados);s('k-receita',fmt(receita));s('k-nf',clientes.filter(c=>c.emite_nf).length);
+  const max=Math.max(ativos,pend,baixados,1);
   [['ativ',ativos],['pend',pend],['baix',baixados]].forEach(([k,v])=>{
-    const b=document.getElementById('bar-'+k); if(b) b.style.width=(v/maxBar*100)+'%';
-    const c=document.getElementById('cnt-'+k); if(c) c.textContent=v;
+    const b=document.getElementById('bar-'+k);if(b)b.style.width=(v/max*100)+'%';
+    const c=document.getElementById('cnt-'+k);if(c)c.textContent=v;
   });
-  // cnt-pend2 special
-  const cp=document.getElementById('cnt-pend2'); if(cp) cp.textContent=pend;
-
   const tipos=[['Mensalista','var(--blue)'],['Avulso','#EF9F27'],['Temporário','var(--purple)'],['Parceiro','var(--green)']];
-  const distEl=document.getElementById('dist-tipo');
-  const totalConts=contratos.length;
-  distEl.innerHTML = totalConts ? tipos.map(([t,c])=>{
+  const total=contratos.length;
+  document.getElementById('dist-tipo').innerHTML=total?tipos.map(([t,c])=>{
     const n=contratos.filter(x=>x.tipo===t).length;
-    if(!n) return '';
-    return `<div class="bar-row"><span class="bar-label">${t}</span><div class="bar-track"><div class="bar-fill" style="background:${c};width:${(n/totalConts*100).toFixed(0)}%"></div></div><span class="bar-count">${n}</span></div>`;
-  }).join('') : '<div class="empty">Nenhum contrato cadastrado</div>';
+    if(!n)return'';
+    return`<div class="bar-row"><span class="bar-label">${t}</span><div class="bar-track"><div class="bar-fill" style="background:${c};width:${(n/total*100).toFixed(0)}%"></div></div><span class="bar-count">${n}</span></div>`;
+  }).join(''):'<div class="empty">Nenhum contrato cadastrado</div>';
 
-  const hoje=new Date(), lim=new Date(); lim.setDate(lim.getDate()+60);
-  const vencList=contratos.filter(c=>{if(!c.venc_contrato||c.status==='Baixado')return false;const d=new Date(c.venc_contrato+'T12:00:00');return d>=hoje&&d<=lim;});
-  const dashCont=document.getElementById('dash-cont');
-  dashCont.innerHTML=vencList.length?vencList.slice(0,5).map(c=>{
-    const cl=clientes.find(x=>x.id===c.cliente_id);
-    return`<div class="pag-row"><div><strong style="font-size:13px">${cl?.nome||'?'}</strong><div style="font-size:11px;color:var(--text3)">${c.tipo}</div></div><span class="pill baixado">${fmtData(c.venc_contrato)}</span></div>`;
-  }).join(''):'<div class="empty">Nenhum vencendo nos próximos 60 dias</div>';
-
-  const nfList=clientes.filter(c=>c.emite_nf);
-  const dashNf=document.getElementById('dash-nf');
-  dashNf.innerHTML=nfList.length?nfList.slice(0,5).map(c=>`
-    <div class="pag-row"><strong style="font-size:13px">${c.nome}</strong><span class="tag-nf">🧾 NF</span></div>`).join(''):'<div class="empty">Nenhum cliente com NF</div>';
+  const hoje=new Date(),lim=new Date();lim.setDate(lim.getDate()+60);
+  const venc=contratos.filter(c=>{if(!c.venc_contrato||c.status==='Baixado')return false;const d=new Date(c.venc_contrato+'T12:00:00');return d>=hoje&&d<=lim;});
+  document.getElementById('dash-cont').innerHTML=venc.length?venc.slice(0,5).map(c=>{const cl=clientes.find(x=>x.id===c.cliente_id);return`<div class="pag-row"><div><strong>${cl?.nome||'?'}</strong><div style="font-size:11px;color:var(--text3)">${c.tipo}</div></div><span class="pill baixado">${fmtData(c.venc_contrato)}</span></div>`;}).join(''):'<div class="empty">Nenhum</div>';
+  document.getElementById('dash-nf').innerHTML=clientes.filter(c=>c.emite_nf).length?clientes.filter(c=>c.emite_nf).slice(0,5).map(c=>`<div class="pag-row"><strong>${c.nome}</strong><span class="tag-nf">🧾 NF</span></div>`).join(''):'<div class="empty">Nenhum</div>';
 }
 
-function renderTabela() {
-  const busca = document.getElementById('s-busca').value.toLowerCase();
-  const tipo  = document.getElementById('s-tipo').value;
-  const status= document.getElementById('s-status').value;
-  const nfF   = document.getElementById('s-nf').value;
-
-  let list = clientes.filter(c => {
-    if (busca && !c.nome.toLowerCase().includes(busca)) return false;
-    const cConts = contratos.filter(x=>x.cliente_id===c.id);
-    if (tipo   && !cConts.some(x=>x.tipo===tipo))   return false;
-    if (status && !cConts.some(x=>x.status===status)) return false;
-    if (nfF==='sim' && !c.emite_nf) return false;
-    if (nfF==='nao' &&  c.emite_nf) return false;
+// ── LISTAGEM ──────────────────────────────────
+function renderTabela(){
+  const busca=document.getElementById('s-busca').value.toLowerCase();
+  const tipo=document.getElementById('s-tipo').value;
+  const status=document.getElementById('s-status').value;
+  const nfF=document.getElementById('s-nf').value;
+  let list=clientes.filter(c=>{
+    if(busca&&!c.nome.toLowerCase().includes(busca))return false;
+    const cc=contratos.filter(x=>x.cliente_id===c.id);
+    if(tipo&&!cc.some(x=>x.tipo===tipo))return false;
+    if(status&&!cc.some(x=>x.status===status))return false;
+    if(nfF==='sim'&&!c.emite_nf)return false;
+    if(nfF==='nao'&&c.emite_nf)return false;
     return true;
   });
-
   const tbody=document.getElementById('cl-tbody');
-  if(!list.length){tbody.innerHTML=`<tr><td colspan="6" style="color:var(--text3);padding:16px 12px;text-align:center">Nenhum cliente encontrado</td></tr>`;return;}
-
+  if(!list.length){tbody.innerHTML=`<tr><td colspan="6" style="color:var(--text3);padding:16px;text-align:center">Nenhum cliente encontrado</td></tr>`;return;}
   tbody.innerHTML=list.map(c=>{
-    const cConts=contratos.filter(x=>x.cliente_id===c.id);
-    const receita=cConts.filter(x=>x.status==='Ativo').reduce((s,x)=>s+(x.valor||0),0);
-    const tags=cConts.map(x=>`<span class="pill ${x.tipo.toLowerCase()}" title="${x.status}">${x.tipo}<span style="opacity:.6;margin-left:2px">·${x.status[0]}</span></span>`).join('');
-    const prox=cConts.filter(x=>x.venc_contrato&&x.status!=='Baixado').sort((a,b)=>a.venc_contrato.localeCompare(b.venc_contrato))[0];
-    const docCount=documentos.filter(d=>d.cliente_id===c.id).length;
+    const cc=contratos.filter(x=>x.cliente_id===c.id);
+    const ativos=cc.filter(x=>x.status!=='Baixado');
+    const receita=ativos.filter(x=>x.tipo!=='Avulso').reduce((s,x)=>s+(x.valor||0),0);
+    const tags=ativos.length?[...new Set(ativos.map(x=>x.tipo))].map(t=>`<span class="pill ${t.toLowerCase()}">${t}</span>`).join(''):'<span style="font-size:11px;color:var(--text3)">Sem contratos</span>';
+    const prox=cc.filter(x=>x.venc_contrato&&x.status!=='Baixado').sort((a,b)=>a.venc_contrato.localeCompare(b.venc_contrato))[0];
+    const ndoc=documentos.filter(d=>d.cliente_id===c.id).length;
     return`<tr onclick="abrirFicha(${c.id})" style="cursor:pointer">
-      <td style="font-weight:500">${c.nome}${docCount?`<span style="font-size:10px;color:var(--text3);margin-left:6px">📎${docCount}</span>`:''}</td>
-      <td><div class="tags-cell">${tags||'<span style="color:var(--text3);font-size:11px">Sem contratos</span>'}</div></td>
+      <td style="font-weight:500">${c.nome}${ndoc?`<span style="font-size:10px;color:var(--text3);margin-left:5px">📎${ndoc}</span>`:''}</td>
+      <td><div class="tags-wrap">${tags}</div></td>
       <td>${receita?fmt(receita):'—'}</td>
       <td>${c.emite_nf?`<span class="tag-nf">🧾</span>`:''}</td>
       <td style="font-size:12px;color:var(--text2)">${prox?fmtData(prox.venc_contrato):'—'}</td>
-      <td><div class="actions-col" onclick="event.stopPropagation()">
-        <button class="btn sm" onclick="abrirFicha(${c.id})" title="Ver ficha">👁</button>
-        <button class="btn sm danger" onclick="excluirCliente(${c.id})" title="Excluir">✕</button>
+      <td onclick="event.stopPropagation()"><div style="display:flex;gap:3px">
+        <button class="btn sm danger" onclick="excluirCliente(${c.id})">✕</button>
       </div></td>
     </tr>`;
   }).join('');
 }
 
-// ── FICHA DO CLIENTE ───────────────────────────
-function abrirFicha(clienteId) {
-  fichaClienteId=clienteId; fichaActiveTab=0;
+// ── FICHA ─────────────────────────────────────
+function abrirFicha(id){
+  fichaId=id;
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('pg-ficha').classList.add('active');
   renderFicha();
 }
 
-function renderFicha() {
-  const c=clientes.find(x=>x.id===fichaClienteId);
-  if(!c) return;
-  const cConts=contratos.filter(x=>x.cliente_id===c.id);
-  const receita=cConts.filter(x=>x.status==='Ativo').reduce((s,x)=>s+(x.valor||0),0);
+function renderFicha(){
+  const c=clientes.find(x=>x.id===fichaId);
+  if(!c)return;
+  const cc=contratos.filter(x=>x.cliente_id===c.id);
+  const docs=documentos.filter(x=>x.cliente_id===c.id);
+  const receita=cc.filter(x=>x.status!=='Baixado'&&x.tipo!=='Avulso').reduce((s,x)=>s+(x.valor||0),0);
+  const ini=c.nome.split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase();
 
-  // Header
-  const initials=c.nome.split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase();
-  document.getElementById('ficha-header').innerHTML=`
-    <div class="avatar">${initials}</div>
-    <div class="ficha-info">
-      <div class="ficha-nome">${c.nome}</div>
-      <div class="ficha-meta">
-        ${c.email?`<span>✉ ${c.email}</span>`:''}
-        ${c.telefone?`<span>📞 ${c.telefone}</span>`:''}
-        ${c.emite_nf?`<span class="tag-nf">🧾 NF mensal</span>`:''}
-        ${receita?`<span style="color:var(--blue);font-weight:500">${fmt(receita)}/mês</span>`:''}
+  // Tipos fixos presentes
+  const tiposFixos=['Mensalista','Temporário','Parceiro'];
+  const tiposPresentes=[...new Set(cc.map(x=>x.tipo))];
+
+  let html=`
+  <div class="ficha-card">
+    <div class="ficha-top">
+      <div class="avatar">${ini}</div>
+      <div style="flex:1;min-width:0">
+        <div class="ficha-nome">${c.nome}</div>
+        <div class="ficha-sub">
+          ${c.email?`<span>✉ ${c.email}</span>`:''}
+          ${c.telefone?`<span>📞 ${c.telefone}</span>`:''}
+          ${c.emite_nf?`<span class="tag-nf">🧾 NF mensal</span>`:''}
+          ${receita?`<span style="color:var(--blue);font-weight:500">${fmt(receita)}/mês</span>`:''}
+        </div>
+        ${c.observacao?`<div style="font-size:12px;color:var(--text2);margin-top:6px;font-style:italic">${c.observacao}</div>`:''}
       </div>
-      ${c.observacao?`<div style="font-size:12px;color:var(--text2);margin-top:6px;font-style:italic">${c.observacao}</div>`:''}
-    </div>`;
+    </div>
+  </div>`;
 
-  // Tabs: um tab por contrato + docs
-  const tabsEl=document.getElementById('ficha-tabs');
-  const contentEl=document.getElementById('ficha-tab-content');
+  // ── Seção MENSALISTA ──
+  const mensal=cc.find(x=>x.tipo==='Mensalista');
+  html+=`<div class="secao">
+    <div class="secao-header">
+      <div class="secao-title"><span class="pill mensalista">Mensalista</span></div>
+      <div style="display:flex;gap:6px">
+        ${mensal?`<button class="btn sm" onclick="abrirContFixo('Mensalista',${mensal.id})">✏ Editar</button>`:''}
+        <button class="btn sm primary" onclick="abrirContFixo('Mensalista',${mensal?mensal.id:'null'})">${mensal?'':'+ Adicionar'}</button>
+      </div>
+    </div>
+    ${mensal?`
+      <div class="cont-grid">
+        <div class="cont-field"><label>Valor</label><span>${fmt(mensal.valor)}</span></div>
+        <div class="cont-field"><label>Status</label><span class="pill ${mensal.status.toLowerCase()}">${mensal.status}</span></div>
+        <div class="cont-field"><label>Vencimento</label><span>${mensal.venc_contrato?fmtData(mensal.venc_contrato):'—'}</span></div>
+      </div>
+      ${mensal.observacao?`<div class="cont-obs">${mensal.observacao}</div>`:''}
+    `:'<div class="secao-vazia">Nenhum contrato mensalista cadastrado</div>'}
+  </div>`;
 
-  const tabLabels=[...cConts.map((ct,i)=>`<div class="tab${fichaActiveTab===i?' active':''}" onclick="fichaTab(${i})">${ct.tipo} <span class="pill ${ct.status.toLowerCase()}" style="font-size:9px;padding:1px 5px">${ct.status}</span></div>`),
-    `<div class="tab${fichaActiveTab===cConts.length?' active':''}" onclick="fichaTab(${cConts.length})">📎 Documentos</div>`];
-  tabsEl.innerHTML=tabLabels.join('');
-
-  // Tab content
-  if(fichaActiveTab<cConts.length) {
-    const ct=cConts[fichaActiveTab];
-    contentEl.innerHTML=`
-      <div class="cont-ficha">
-        <div class="cont-ficha-header">
-          <div class="cont-ficha-title">
-            <span class="pill ${ct.tipo.toLowerCase()}">${ct.tipo}</span>
-            <span class="pill ${ct.status.toLowerCase()}">${ct.status}</span>
-          </div>
-          <div class="actions-col">
-            <button class="btn sm" onclick="editarContrato(${ct.id})">✏ Editar</button>
-            <button class="btn sm danger" onclick="excluirContrato(${ct.id})">✕ Baixar</button>
+  // ── Seção AVULSOS ──
+  const avulsos=cc.filter(x=>x.tipo==='Avulso');
+  html+=`<div class="secao">
+    <div class="secao-header">
+      <div class="secao-title"><span class="pill avulso">Avulsos</span><span style="font-size:11px;color:var(--text3)">${avulsos.length} serviço${avulsos.length!==1?'s':''}</span></div>
+      <button class="btn sm primary" onclick="abrirAvulso(null)">+ Novo avulso</button>
+    </div>
+    ${avulsos.length?avulsos.map(av=>`
+      <div class="avulso-item">
+        <div class="avulso-header">
+          <span class="avulso-desc">${av.observacao||'Serviço avulso'}</span>
+          <div style="display:flex;gap:5px;align-items:center">
+            <span class="pill ${av.status.toLowerCase()}">${av.status}</span>
+            <button class="btn xs" onclick="abrirAvulso(${av.id})">✏</button>
+            <button class="btn xs danger" onclick="excluirContrato(${av.id})">✕</button>
           </div>
         </div>
-        <div class="cont-detail-grid">
-          <div class="cont-detail-item"><label>Valor mensal</label><span>${fmt(ct.valor)}</span></div>
-          <div class="cont-detail-item"><label>Venc. contrato</label><span>${ct.venc_contrato?fmtData(ct.venc_contrato):'—'}</span></div>
-          <div class="cont-detail-item"><label>Criado em</label><span>${fmtData(ct.created_at.split('T')[0])}</span></div>
+        <div class="avulso-meta">
+          <span>${fmt(av.valor)}</span>
+          ${av.venc_contrato?`<span>Venc: ${fmtData(av.venc_contrato)}</span>`:''}
         </div>
-        ${ct.observacao?`<div style="margin-top:12px;font-size:12px;color:var(--text2);font-style:italic;padding:8px;background:var(--bg);border-radius:var(--radius)">${ct.observacao}</div>`:''}
+      </div>`).join(''):'<div class="secao-vazia">Nenhum serviço avulso cadastrado</div>'}
+  </div>`;
+
+  // ── Seção TEMPORÁRIO ──
+  const temp=cc.find(x=>x.tipo==='Temporário');
+  html+=`<div class="secao">
+    <div class="secao-header">
+      <div class="secao-title"><span class="pill temporário">Temporário</span></div>
+      <div style="display:flex;gap:6px">
+        ${temp?`<button class="btn sm" onclick="abrirContFixo('Temporário',${temp.id})">✏ Editar</button>`:''}
+        ${!temp?`<button class="btn sm primary" onclick="abrirContFixo('Temporário',null)">+ Adicionar</button>`:''}
+      </div>
+    </div>
+    ${temp?`
+      <div class="cont-grid">
+        <div class="cont-field"><label>Valor</label><span>${fmt(temp.valor)}</span></div>
+        <div class="cont-field"><label>Status</label><span class="pill ${temp.status.toLowerCase()}">${temp.status}</span></div>
+        <div class="cont-field"><label>Vencimento</label><span>${temp.venc_contrato?fmtData(temp.venc_contrato):'—'}</span></div>
+      </div>
+      ${temp.observacao?`<div class="cont-obs">${temp.observacao}</div>`:''}
+    `:'<div class="secao-vazia">Nenhum contrato temporário cadastrado</div>'}
+  </div>`;
+
+  // ── Seção PARCEIRO ──
+  const parc=cc.find(x=>x.tipo==='Parceiro');
+  html+=`<div class="secao">
+    <div class="secao-header">
+      <div class="secao-title"><span class="pill parceiro">Parceiro</span></div>
+      <div style="display:flex;gap:6px">
+        ${parc?`<button class="btn sm" onclick="abrirContFixo('Parceiro',${parc.id})">✏ Editar</button>`:''}
+        ${!parc?`<button class="btn sm primary" onclick="abrirContFixo('Parceiro',null)">+ Adicionar</button>`:''}
+      </div>
+    </div>
+    ${parc?`
+      <div class="cont-grid">
+        <div class="cont-field"><label>Valor</label><span>${fmt(parc.valor)}</span></div>
+        <div class="cont-field"><label>Status</label><span class="pill ${parc.status.toLowerCase()}">${parc.status}</span></div>
+        <div class="cont-field"><label>Vencimento</label><span>${parc.venc_contrato?fmtData(parc.venc_contrato):'—'}</span></div>
+      </div>
+      ${parc.observacao?`<div class="cont-obs">${parc.observacao}</div>`:''}
+    `:'<div class="secao-vazia">Nenhum contrato de parceiro cadastrado</div>'}
+  </div>`;
+
+  // ── Seção DOCUMENTOS ──
+  html+=`<div class="secao">
+    <div class="secao-header">
+      <div class="secao-title">📎 Documentos <span style="font-size:11px;color:var(--text3)">${docs.length} arquivo${docs.length!==1?'s':''}</span></div>
+    </div>
+    <div class="doc-drop" onclick="document.getElementById('file-ficha').click()" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="dropFile(event)">
+      <div style="font-size:22px">📎</div>
+      <p>Clique ou arraste arquivos</p>
+      <small>PDF, Word, imagens — até 50MB</small>
+    </div>
+    <input type="file" id="file-ficha" class="file-input" multiple onchange="iniciarUpload(this.files)">
+    <div id="upload-prog"></div>
+    ${docs.map(d=>{
+      const url=`${SUPABASE_URL}/storage/v1/object/public/documentos/${d.storage_path}`;
+      return`<div class="doc-item">
+        <div class="doc-icon ${docClass(d.mime_type)}">${docIcon(d.mime_type)}</div>
+        <div class="doc-info"><div class="doc-name">${d.nome}</div><div class="doc-meta">${d.tipo||'Documento'} · ${fmtSize(d.tamanho)} · ${fmtData(d.created_at.split('T')[0])}${d.descricao?' · '+d.descricao:''}</div></div>
+        <div class="doc-actions">
+          <a href="${url}" target="_blank" class="btn sm success">👁</a>
+          <a href="${url}" download="${d.nome}" class="btn sm">⬇</a>
+          <button class="btn sm danger" onclick="excluirDoc(${d.id},'${d.storage_path}')">✕</button>
+        </div>
       </div>`;
-  } else {
-    // Documentos tab
-    const docs=documentos.filter(d=>d.cliente_id===c.id);
-    contentEl.innerHTML=`
-      <div class="doc-drop" onclick="document.getElementById('file-input-ficha').click()" ondragover="dragOver(event,'ficha')" ondragleave="dragLeave('ficha')" ondrop="dropFile(event,'ficha')">
-        <div style="font-size:22px">📎</div>
-        <p>Clique ou arraste arquivos aqui</p>
-        <small>PDF, Word, imagens — até 50MB</small>
-      </div>
-      <input type="file" id="file-input-ficha" class="file-input" multiple onchange="uploadFiles(this.files,${c.id})">
-      <div id="upload-progress-ficha"></div>
-      ${docs.length?docs.map(d=>{
-        const url=`${SUPABASE_URL}/storage/v1/object/public/documentos/${d.storage_path}`;
-        return`<div class="doc-card">
-          <div class="doc-icon ${docClass(d.mime_type)}">${docIcon(d.mime_type)}</div>
-          <div class="doc-info"><div class="doc-name">${d.nome}</div><div class="doc-meta">${d.tipo||'Documento'} · ${fmtSize(d.tamanho)} · ${fmtData(d.created_at.split('T')[0])}${d.descricao?` · ${d.descricao}`:''}</div></div>
-          <div class="doc-actions">
-            <a href="${url}" target="_blank" class="btn sm success">👁</a>
-            <a href="${url}" download="${d.nome}" class="btn sm">⬇</a>
-            <button class="btn sm danger" onclick="excluirDoc(${d.id},'${d.storage_path}')">✕</button>
-          </div></div>`;
-      }).join(''):'<div class="empty">Nenhum documento para este cliente</div>'}`;
-  }
+    }).join('')}
+  </div>`;
+
+  document.getElementById('ficha-content').innerHTML=html;
 }
 
-function fichaTab(i) { fichaActiveTab=i; renderFicha(); }
-
 // ── MODAL CLIENTE ─────────────────────────────
-function abrirModalCliente(id=null) {
-  editClienteId=id; mcContratosForms=[];
-  document.getElementById('mc-title').textContent = id?'Editar cliente':'Novo cliente';
-  if(id) {
+function abrirModalCliente(id=null){
+  editClienteId=id;
+  document.getElementById('mc-title').textContent=id?'Editar cliente':'Novo cliente';
+  if(id){
     const c=clientes.find(x=>x.id===id);
     document.getElementById('mc-nome').value=c.nome||'';
     document.getElementById('mc-email').value=c.email||'';
     document.getElementById('mc-tel').value=c.telefone||'';
     document.getElementById('mc-obs').value=c.observacao||'';
     document.getElementById('mc-nf').checked=c.emite_nf||false;
-    // Carrega contratos existentes como forms
-    const cConts=contratos.filter(x=>x.cliente_id===id);
-    cConts.forEach(ct=>mcContratosForms.push({id:ct.id,tipo:ct.tipo,status:ct.status,valor:ct.valor,venc:ct.venc_contrato,obs:ct.observacao}));
-  } else {
+  }else{
     ['mc-nome','mc-email','mc-tel','mc-obs'].forEach(x=>document.getElementById(x).value='');
     document.getElementById('mc-nf').checked=false;
   }
-  renderContratosForms();
   document.getElementById('modal-cliente').classList.add('open');
   document.getElementById('mc-nome').focus();
 }
 
-function fecharModalCliente() { document.getElementById('modal-cliente').classList.remove('open'); editClienteId=null; }
-function editarClienteAtual() { abrirModalCliente(fichaClienteId); }
-
-function addContratoForm() {
-  mcContratosForms.push({id:null,tipo:'Mensalista',status:'Ativo',valor:'',venc:'',obs:''});
-  renderContratosForms();
-}
-
-function removeContratoForm(i) { mcContratosForms.splice(i,1); renderContratosForms(); }
-
-function renderContratosForms() {
-  const el=document.getElementById('mc-contratos-list');
-  el.innerHTML=mcContratosForms.map((f,i)=>`
-    <div class="contrato-card">
-      <div class="contrato-card-header">
-        <span class="contrato-card-title">Contrato ${i+1}</span>
-        <button class="btn-remove-cont" onclick="removeContratoForm(${i})">✕</button>
-      </div>
-      <div class="form-3">
-        <div class="form-row"><label>Tipo</label>
-          <select onchange="mcContratosForms[${i}].tipo=this.value">
-            ${['Mensalista','Avulso','Temporário','Parceiro'].map(t=>`<option${f.tipo===t?' selected':''}>${t}</option>`).join('')}
-          </select>
-        </div>
-        <div class="form-row"><label>Status</label>
-          <select onchange="mcContratosForms[${i}].status=this.value">
-            ${['Ativo','Pendente','Baixado'].map(t=>`<option${f.status===t?' selected':''}>${t}</option>`).join('')}
-          </select>
-        </div>
-        <div class="form-row"><label>Valor (R$)</label>
-          <input type="number" value="${f.valor||''}" placeholder="0,00" oninput="mcContratosForms[${i}].valor=this.value" min="0" step="0.01">
-        </div>
-      </div>
-      <div class="form-2">
-        <div class="form-row"><label>Venc. contrato</label>
-          <input type="date" value="${f.venc||''}" onchange="mcContratosForms[${i}].venc=this.value">
-        </div>
-        <div class="form-row"><label>Observação</label>
-          <input type="text" value="${f.obs||''}" placeholder="Detalhe..." oninput="mcContratosForms[${i}].obs=this.value">
-        </div>
-      </div>
-    </div>`).join('');
-}
-
-async function salvarCliente() {
+async function salvarCliente(){
   const nome=document.getElementById('mc-nome').value.trim();
-  if(!nome){toast('Informe o nome do cliente');return;}
-  const payload={nome,email:document.getElementById('mc-email').value.trim()||null,telefone:document.getElementById('mc-tel').value.trim()||null,observacao:document.getElementById('mc-obs').value.trim()||null,emite_nf:document.getElementById('mc-nf').checked};
-  try {
-    let clienteId=editClienteId;
-    if(editClienteId) {
-      const{error}=await db.from('clientes').update(payload).eq('id',editClienteId);
-      if(error) throw error;
-    } else {
-      const{data,error}=await db.from('clientes').insert(payload).select().single();
-      if(error) throw error;
-      clienteId=data.id;
-    }
-    // Salvar contratos
-    for(const f of mcContratosForms) {
-      const cp={cliente_id:clienteId,tipo:f.tipo,status:f.status,valor:parseFloat(f.valor)||0,venc_contrato:f.venc||null,observacao:f.obs||null};
-      if(f.id) { await db.from('contratos').update(cp).eq('id',f.id); }
-      else      { await db.from('contratos').insert(cp); }
-    }
-    toast(editClienteId?'Cliente atualizado!':'Cliente cadastrado!');
-    fecharModalCliente(); await boot();
-    if(editClienteId) renderFicha();
-  } catch(e){toast('Erro: '+e.message);}
+  if(!nome){toast('Informe o nome');return;}
+  const p={nome,email:document.getElementById('mc-email').value.trim()||null,telefone:document.getElementById('mc-tel').value.trim()||null,observacao:document.getElementById('mc-obs').value.trim()||null,emite_nf:document.getElementById('mc-nf').checked};
+  try{
+    if(editClienteId){await db.from('clientes').update(p).eq('id',editClienteId);toast('Cliente atualizado!');}
+    else{await db.from('clientes').insert(p);toast('Cliente cadastrado!');}
+    fecharModal('modal-cliente'); await boot(); if(fichaId)renderFicha();
+  }catch(e){toast('Erro: '+e.message);}
 }
 
-async function excluirCliente(id) {
+async function excluirCliente(id){
   const c=clientes.find(x=>x.id===id);
-  if(!confirm(`Excluir "${c.nome}"? Todos os contratos e documentos serão removidos.`)) return;
-  try {
+  if(!confirm(`Excluir "${c.nome}"?`))return;
+  try{
     const docs=documentos.filter(d=>d.cliente_id===id);
-    if(docs.length) await db.storage.from('documentos').remove(docs.map(d=>d.storage_path));
+    if(docs.length)await db.storage.from('documentos').remove(docs.map(d=>d.storage_path));
     await db.from('clientes').delete().eq('id',id);
     toast('Cliente removido'); goPage('clientes'); await boot();
-  } catch(e){toast('Erro: '+e.message);}
+  }catch(e){toast('Erro: '+e.message);}
 }
 
-// ── MODAL CONTRATO (editar contrato existente) ─
-function abrirModalContrato(id=null) {
-  editContratoId=id;
-  document.getElementById('mct-title').textContent=id?'Editar contrato':'Novo contrato';
+// ── MODAL CONTRATO FIXO ───────────────────────
+function abrirContFixo(tipo,id){
+  contFixoTipo=tipo; editContratoId=id;
+  document.getElementById('mcf-title').textContent=`Contrato ${tipo}`;
   if(id){
     const ct=contratos.find(x=>x.id===id);
-    document.getElementById('mct-tipo').value=ct.tipo;
-    document.getElementById('mct-status').value=ct.status;
-    document.getElementById('mct-valor').value=ct.valor||'';
-    document.getElementById('mct-venc').value=ct.venc_contrato||'';
-    document.getElementById('mct-obs').value=ct.observacao||'';
-  } else {
-    ['mct-valor','mct-venc','mct-obs'].forEach(x=>document.getElementById(x).value='');
-    document.getElementById('mct-tipo').value='Mensalista';
-    document.getElementById('mct-status').value='Ativo';
+    document.getElementById('mcf-valor').value=ct.valor||'';
+    document.getElementById('mcf-status').value=ct.status||'Ativo';
+    document.getElementById('mcf-venc').value=ct.venc_contrato||'';
+    document.getElementById('mcf-obs').value=ct.observacao||'';
+  }else{
+    ['mcf-valor','mcf-venc','mcf-obs'].forEach(x=>document.getElementById(x).value='');
+    document.getElementById('mcf-status').value='Ativo';
   }
-  document.getElementById('modal-contrato').classList.add('open');
+  document.getElementById('modal-cont-fixo').classList.add('open');
 }
 
-function fecharModalContrato(){document.getElementById('modal-contrato').classList.remove('open');editContratoId=null;}
-function editarContrato(id){abrirModalContrato(id);}
-
-async function salvarContrato(){
-  const cp={tipo:document.getElementById('mct-tipo').value,status:document.getElementById('mct-status').value,valor:parseFloat(document.getElementById('mct-valor').value)||0,venc_contrato:document.getElementById('mct-venc').value||null,observacao:document.getElementById('mct-obs').value.trim()||null,cliente_id:fichaClienteId};
+async function salvarContFixo(){
+  const p={cliente_id:fichaId,tipo:contFixoTipo,status:document.getElementById('mcf-status').value,valor:parseFloat(document.getElementById('mcf-valor').value)||0,venc_contrato:document.getElementById('mcf-venc').value||null,observacao:document.getElementById('mcf-obs').value.trim()||null};
   try{
-    if(editContratoId){ await db.from('contratos').update(cp).eq('id',editContratoId); }
-    else { await db.from('contratos').insert(cp); }
-    toast('Contrato salvo!'); fecharModalContrato(); await boot(); renderFicha();
+    if(editContratoId){await db.from('contratos').update(p).eq('id',editContratoId);}
+    else{await db.from('contratos').insert(p);}
+    toast('Salvo!'); fecharModal('modal-cont-fixo'); await boot(); renderFicha();
+  }catch(e){toast('Erro: '+e.message);}
+}
+
+// ── MODAL AVULSO ──────────────────────────────
+function abrirAvulso(id){
+  editAvulsoId=id;
+  document.getElementById('mav-title').textContent=id?'Editar serviço avulso':'Novo serviço avulso';
+  if(id){
+    const av=contratos.find(x=>x.id===id);
+    document.getElementById('mav-desc').value=av.observacao||'';
+    document.getElementById('mav-valor').value=av.valor||'';
+    document.getElementById('mav-status').value=av.status||'Ativo';
+    document.getElementById('mav-obs').value='';
+  }else{
+    ['mav-desc','mav-valor','mav-obs'].forEach(x=>document.getElementById(x).value='');
+    document.getElementById('mav-status').value='Ativo';
+  }
+  document.getElementById('modal-avulso').classList.add('open');
+  document.getElementById('mav-desc').focus();
+}
+
+async function salvarAvulso(){
+  const desc=document.getElementById('mav-desc').value.trim();
+  if(!desc){toast('Informe a descrição');return;}
+  const p={cliente_id:fichaId,tipo:'Avulso',status:document.getElementById('mav-status').value,valor:parseFloat(document.getElementById('mav-valor').value)||0,venc_contrato:null,observacao:desc};
+  try{
+    if(editAvulsoId){await db.from('contratos').update(p).eq('id',editAvulsoId);}
+    else{await db.from('contratos').insert(p);}
+    toast('Avulso salvo!'); fecharModal('modal-avulso'); await boot(); renderFicha();
   }catch(e){toast('Erro: '+e.message);}
 }
 
 async function excluirContrato(id){
-  if(!confirm('Baixar/excluir este contrato?')) return;
-  try{ await db.from('contratos').delete().eq('id',id); toast('Contrato excluído'); await boot(); fichaActiveTab=0; renderFicha(); }
+  if(!confirm('Excluir este contrato?'))return;
+  try{await db.from('contratos').delete().eq('id',id);toast('Removido');await boot();renderFicha();}
   catch(e){toast('Erro: '+e.message);}
 }
 
-// ── NAVEGAÇÃO ─────────────────────────────────
-function goPage(pg) {
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.ni').forEach(n=>n.classList.remove('active'));
-  document.getElementById('pg-'+pg).classList.add('active');
-  limparFiltros();
-  if(pg==='clientes') renderTabela();
-  if(pg==='documentos') renderDocs();
-  if(pg==='contratos-venc') renderContratosVenc();
+// ── UPLOAD DOCS ───────────────────────────────
+function dragOver(e){e.preventDefault();document.querySelector('.doc-drop')?.classList.add('over');}
+function dragLeave(){document.querySelector('.doc-drop')?.classList.remove('over');}
+function dropFile(e){e.preventDefault();dragLeave();iniciarUpload(e.dataTransfer.files);}
+
+function iniciarUpload(files){
+  if(!files||!files.length)return;
+  pendingFiles=Array.from(files);pendingIdx=0;
+  processarProximo();
 }
 
-function filtrarTipo(tipo){goPage('clientes');document.getElementById('s-tipo').value=tipo;document.getElementById('cl-title').textContent='Clientes — '+tipo+'s';renderTabela();}
-function filtrarStatus(status){goPage('clientes');document.getElementById('s-status').value=status;document.getElementById('cl-title').textContent='Contratos '+status+'s';renderTabela();}
-function filtrarNF(){goPage('clientes');document.getElementById('s-nf').value='sim';document.getElementById('cl-title').textContent='Clientes — Emitem NF';renderTabela();}
-function limparFiltros(){['s-busca','s-tipo','s-status','s-nf'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});const t=document.getElementById('cl-title');if(t)t.textContent='Clientes';}
-
-function renderContratosVenc(){
-  const hoje=new Date(),lim=new Date();lim.setDate(lim.getDate()+60);
-  const list=contratos.filter(c=>{if(!c.venc_contrato||c.status==='Baixado')return false;const d=new Date(c.venc_contrato+'T12:00:00');return d>=hoje&&d<=lim;});
-  document.getElementById('cont-venc-list').innerHTML=list.length?`<div class="tbl-wrap"><table><thead><tr><th>Cliente</th><th>Tipo</th><th>Status</th><th>Valor</th><th>Vencimento</th></tr></thead><tbody>${list.map(c=>{const cl=clientes.find(x=>x.id===c.cliente_id);return`<tr onclick="abrirFicha(${c.cliente_id})" style="cursor:pointer"><td style="font-weight:500">${cl?.nome||'?'}</td><td><span class="pill ${c.tipo.toLowerCase()}">${c.tipo}</span></td><td><span class="pill ${c.status.toLowerCase()}">${c.status}</span></td><td>${fmt(c.valor)}</td><td>${fmtData(c.venc_contrato)}</td></tr>`;}).join('')}</tbody></table></div>`:'<div class="empty">Nenhum contrato vencendo nos próximos 60 dias</div>';
-}
-
-// ── DOCUMENTOS ────────────────────────────────
-function populateSelects(){
-  const opts=clientes.map(c=>`<option value="${c.id}">${c.nome}</option>`).join('');
-  ['doc-filter-cliente','u-cliente'].forEach(id=>{
-    const el=document.getElementById(id);if(!el)return;
-    const first=id==='doc-filter-cliente'?'<option value="">Todos os clientes</option>':'<option value="">Selecione o cliente...</option>';
-    el.innerHTML=first+opts;
-  });
-}
-
-function renderDocs(){
-  const fc=document.getElementById('doc-filter-cliente').value;
-  const ft=document.getElementById('doc-filter-tipo').value;
-  let list=documentos.filter(d=>{
-    if(fc&&String(d.cliente_id)!==String(fc))return false;
-    if(ft&&d.tipo!==ft)return false;
-    return true;
-  });
-  const el=document.getElementById('docs-list-geral');
-  el.innerHTML=list.length?list.map(d=>{
-    const cl=clientes.find(x=>x.id===d.cliente_id);
-    const url=`${SUPABASE_URL}/storage/v1/object/public/documentos/${d.storage_path}`;
-    return`<div class="doc-card"><div class="doc-icon ${docClass(d.mime_type)}">${docIcon(d.mime_type)}</div><div class="doc-info"><div class="doc-name">${d.nome}</div><div class="doc-meta">${cl?.nome||'?'} · ${d.tipo||'Doc'} · ${fmtSize(d.tamanho)} · ${fmtData(d.created_at.split('T')[0])}${d.descricao?' · '+d.descricao:''}</div></div><div class="doc-actions"><a href="${url}" target="_blank" class="btn sm success">👁</a><a href="${url}" download="${d.nome}" class="btn sm">⬇</a><button class="btn sm danger" onclick="excluirDoc(${d.id},'${d.storage_path}')">✕</button></div></div>`;
-  }).join(''):'<div class="empty">Nenhum documento encontrado</div>';
-}
-
-function dragOver(e,ctx){e.preventDefault();document.getElementById('doc-drop'+(ctx==='geral'?'-geral':''))?.classList.add('over');}
-function dragLeave(ctx){document.getElementById('doc-drop'+(ctx==='geral'?'-geral':''))?.classList.remove('over');}
-function dropFile(e,ctx){e.preventDefault();dragLeave(ctx);uploadFiles(e.dataTransfer.files,ctx==='ficha'?fichaClienteId:null);}
-
-function uploadFiles(files,clienteId){
-  if(!files||!files.length) return;
-  pendingFiles=Array.from(files); pendingFileIdx=0; pendingUploadClienteId=clienteId;
-  processNextFile();
-}
-function processNextFile(){
-  if(pendingFileIdx>=pendingFiles.length) return;
-  const f=pendingFiles[pendingFileIdx];
+function processarProximo(){
+  if(pendingIdx>=pendingFiles.length)return;
+  const f=pendingFiles[pendingIdx];
   document.getElementById('upload-filename').textContent=f.name;
-  if(pendingUploadClienteId){
-    document.getElementById('u-cliente').value=pendingUploadClienteId;
-  }
   document.getElementById('u-tipo').value='Contrato';
   document.getElementById('u-desc').value='';
   document.getElementById('modal-upload').classList.add('open');
 }
-function cancelarUpload(){document.getElementById('modal-upload').classList.remove('open');pendingFiles=[];pendingFileIdx=0;}
+
+function cancelarUpload(){fecharModal('modal-upload');pendingFiles=[];pendingIdx=0;}
 
 async function confirmarUpload(){
-  const clienteId=document.getElementById('u-cliente').value;
-  if(!clienteId){toast('Selecione um cliente');return;}
-  const file=pendingFiles[pendingFileIdx];
+  const f=pendingFiles[pendingIdx];
   const tipo=document.getElementById('u-tipo').value;
   const desc=document.getElementById('u-desc').value.trim();
-  document.getElementById('modal-upload').classList.remove('open');
-  const path=`${clienteId}/${Date.now()}_${file.name.replace(/[^a-zA-Z0-9._-]/g,'_')}`;
-  const progArea=document.getElementById(fichaClienteId?'upload-progress-ficha':'upload-progress-geral')||document.getElementById('upload-progress-geral');
-  const pid='prog_'+Date.now();
-  if(progArea) progArea.innerHTML+=`<div class="upload-progress" id="${pid}">Enviando: ${file.name}<div class="progress-bar"><div class="progress-fill" style="width:30%"></div></div></div>`;
+  fecharModal('modal-upload');
+  const path=`${fichaId}/${Date.now()}_${f.name.replace(/[^a-zA-Z0-9._-]/g,'_')}`;
+  const pa=document.getElementById('upload-prog');
+  const pid='p'+Date.now();
+  if(pa)pa.innerHTML+=`<div class="upload-progress" id="${pid}">Enviando: ${f.name}<div class="progress-bar"><div class="progress-fill" style="width:20%"></div></div></div>`;
   try{
-    const{error:ue}=await db.storage.from('documentos').upload(path,file);
-    if(ue) throw ue;
-    const{error:de}=await db.from('documentos').insert({cliente_id:parseInt(clienteId),nome:file.name,descricao:desc||null,tipo,storage_path:path,tamanho:file.size,mime_type:file.type});
-    if(de) throw de;
-    document.querySelector(`#${pid} .progress-fill`)&&(document.querySelector(`#${pid} .progress-fill`).style.width='100%');
+    const{error:ue}=await db.storage.from('documentos').upload(path,f);
+    if(ue)throw ue;
+    const prog=document.querySelector(`#${pid} .progress-fill`);if(prog)prog.style.width='80%';
+    const{error:de}=await db.from('documentos').insert({cliente_id:fichaId,nome:f.name,descricao:desc||null,tipo,storage_path:path,tamanho:f.size,mime_type:f.type});
+    if(de)throw de;
+    if(prog)prog.style.width='100%';
     setTimeout(()=>document.getElementById(pid)?.remove(),1200);
-    toast('Documento enviado!'); await boot();
-    if(fichaClienteId) renderFicha();
+    toast('Documento enviado!'); await boot(); renderFicha();
   }catch(e){document.getElementById(pid)?.remove();toast('Erro: '+e.message);}
-  pendingFileIdx++;
-  if(pendingFileIdx<pendingFiles.length) setTimeout(processNextFile,400);
+  pendingIdx++;
+  if(pendingIdx<pendingFiles.length)setTimeout(processarProximo,400);
 }
 
 async function excluirDoc(id,path){
-  if(!confirm('Excluir este documento?')) return;
-  try{ await db.storage.from('documentos').remove([path]); await db.from('documentos').delete().eq('id',id); toast('Documento excluído'); await boot(); if(fichaClienteId) renderFicha(); }
+  if(!confirm('Excluir este documento?'))return;
+  try{await db.storage.from('documentos').remove([path]);await db.from('documentos').delete().eq('id',id);toast('Excluído');await boot();renderFicha();}
   catch(e){toast('Erro: '+e.message);}
 }
 
+// ── NAVEGAÇÃO ─────────────────────────────────
+function goPage(pg){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.ni').forEach(n=>n.classList.remove('active'));
+  document.getElementById('pg-'+pg).classList.add('active');
+  limparFiltros();
+  if(pg==='clientes')renderTabela();
+  if(pg==='vencendo')renderVencendo();
+}
+
+function filtrarTipo(t){goPage('clientes');document.getElementById('s-tipo').value=t;document.getElementById('cl-title').textContent='Clientes — '+t+'s';renderTabela();}
+function filtrarStatus(s){goPage('clientes');document.getElementById('s-status').value=s;document.getElementById('cl-title').textContent='Contratos '+s+'s';renderTabela();}
+function filtrarNF(){goPage('clientes');document.getElementById('s-nf').value='sim';document.getElementById('cl-title').textContent='Clientes — Emitem NF';renderTabela();}
+function limparFiltros(){['s-busca','s-tipo','s-status','s-nf'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});const t=document.getElementById('cl-title');if(t)t.textContent='Clientes';}
+
+function renderVencendo(){
+  const hoje=new Date(),lim=new Date();lim.setDate(lim.getDate()+60);
+  const list=contratos.filter(c=>{if(!c.venc_contrato||c.status==='Baixado')return false;const d=new Date(c.venc_contrato+'T12:00:00');return d>=hoje&&d<=lim;});
+  document.getElementById('venc-list').innerHTML=list.length?`<div class="tbl-wrap"><table><thead><tr><th>Cliente</th><th>Tipo</th><th>Status</th><th>Valor</th><th>Vencimento</th></tr></thead><tbody>${list.map(c=>{const cl=clientes.find(x=>x.id===c.cliente_id);return`<tr onclick="abrirFicha(${c.cliente_id})" style="cursor:pointer"><td style="font-weight:500">${cl?.nome||'?'}</td><td><span class="pill ${c.tipo.toLowerCase()}">${c.tipo}</span></td><td><span class="pill ${c.status.toLowerCase()}">${c.status}</span></td><td>${fmt(c.valor)}</td><td>${fmtData(c.venc_contrato)}</td></tr>`;}).join('')}</tbody></table></div>`:'<div class="empty">Nenhum contrato vencendo nos próximos 60 dias</div>';
+}
+
+function fecharModal(id){document.getElementById(id).classList.remove('open');}
+
+['modal-cliente','modal-cont-fixo','modal-avulso'].forEach(id=>{
+  document.getElementById(id).addEventListener('click',e=>{if(e.target===e.currentTarget)fecharModal(id);});
+});
+document.getElementById('modal-upload').addEventListener('click',e=>{if(e.target===e.currentTarget)cancelarUpload();});
+
 // ── UTILS ─────────────────────────────────────
-function docIcon(m){if(!m)return'📄';if(m.includes('pdf'))return'📕';if(m.includes('image'))return'🖼';if(m.includes('word')||m.includes('document'))return'📝';if(m.includes('sheet')||m.includes('excel'))return'📊';return'📄';}
+function docIcon(m){if(!m)return'📄';if(m.includes('pdf'))return'📕';if(m.includes('image'))return'🖼';if(m.includes('word')||m.includes('document'))return'📝';if(m.includes('sheet'))return'📊';return'📄';}
 function docClass(m){if(!m)return'other';if(m.includes('pdf'))return'pdf';if(m.includes('image'))return'img';if(m.includes('word'))return'doc';return'other';}
 function fmtSize(b){if(!b)return'';if(b<1024)return b+' B';if(b<1048576)return(b/1024).toFixed(0)+' KB';return(b/1048576).toFixed(1)+' MB';}
 function fmt(v){return(v||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});}
 function fmtData(d){return d?new Date(d+'T12:00:00').toLocaleDateString('pt-BR'):'—';}
 function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),3000);}
-
 function exportCSV(){
-  const rows=[['Cliente','Tipo contrato','Status','Valor','Venc. Contrato','Emite NF','Email','Telefone'],...contratos.map(c=>{const cl=clientes.find(x=>x.id===c.cliente_id);return[cl?.nome||'',c.tipo,c.status,c.valor,c.venc_contrato||'',cl?.emite_nf?'Sim':'Não',cl?.email||'',cl?.telefone||''];})];
+  const rows=[['Cliente','Tipo','Status','Valor','Vencimento','Emite NF'],...contratos.map(c=>{const cl=clientes.find(x=>x.id===c.cliente_id);return[cl?.nome||'',c.tipo,c.status,c.valor,c.venc_contrato||'',cl?.emite_nf?'Sim':'Não'];})];
   const csv=rows.map(r=>r.join(';')).join('\n');
   const a=document.createElement('a');a.href='data:text/csv;charset=utf-8,\uFEFF'+encodeURIComponent(csv);a.download='clientes.csv';a.click();
 }
-
-['modal-cliente','modal-contrato','modal-upload'].forEach(id=>{
-  document.getElementById(id).addEventListener('click',e=>{if(e.target===e.currentTarget){if(id==='modal-upload')cancelarUpload();else document.getElementById(id).classList.remove('open');}});
-});
 
 boot();
 </script>
